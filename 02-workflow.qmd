@@ -1,0 +1,15 @@
+# 工作流程
+
+在實務中，你可以將 Quarto 搭配 **GitHub Actions**，自動生成：
+
+- 靜態網站
+- PDF 書籍
+- 技術文件
+
+例如：
+
+```bash
+quarto render
+```
+
+

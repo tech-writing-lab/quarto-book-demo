@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: _output
+
+book:
+  title: "我的 Quarto 書籍測試"
+  author: "IT 老菜鳥"
+  date: "2025-09-22"
+  chapters:
+    - index.qmd
+    - 01-intro.qmd
+    - 02-workflow.qmd
+    - references.qmd
+
+lang: zh-tw
+toc: true
+number-sections: true
+
+format:
+  html:
+    theme: cosmo
+  epub:
+    toc: true
+  pdf:
+    documentclass: book
+    papersize: a4
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fontsize: 11pt
+    # 指定中文字體 (需安裝 Noto Serif 繁體中文字型)
+    mainfont: "Noto Serif TC"
+

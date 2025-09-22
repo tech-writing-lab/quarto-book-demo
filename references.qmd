@@ -1,0 +1,13 @@
+# 參考文獻 {.unnumbered}
+
+這裡用來放參考文獻或附錄。
+
+## 書籍
+
+- Hadley Wickham, *R for Data Science*, O'Reilly Media, 2017.
+- Norman Matloff, *The Art of R Programming*, No Starch Press, 2011.
+
+## 網站
+
+- [Quarto 官方文件](https://quarto.org)
+- [Pandoc User’s Guide](https://pandoc.org/MANUAL.html)

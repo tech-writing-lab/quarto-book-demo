@@ -1,0 +1,9 @@
+# 前言 {.unnumbered}
+
+這是一本使用 **Quarto** 撰寫的最小示範書籍。
+
+要展示的東西是：
+
+- 基本章節結構
+- HTML/PDF 輸出
+- 與 GitHub Actions 整合
