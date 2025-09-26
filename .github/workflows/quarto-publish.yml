@@ -1,68 +1,64 @@
-name: Build and Deploy Quarto Book
-
 on:
   push:
-    branches: [ main ]
-  pull_request:
+    branches:
+      - main
+  pull_request:  
+
+name: Render and Publish
+
+# you need these permissions to publish to GitHub pages
+# permissions: 
+#     contents: write
+#     pages: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # 1. Checkout 專案
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
-
-      # 2. 安裝 Quarto CLI
-      - name: Setup Quarto
+        
+      - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          version: "latest"
-
-      # 3. 安裝 LaTeX（生成 PDF）
-      - name: Setup TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-
-      # 4. 安裝中文字體（避免 PDF 缺字）
+          # To install LaTeX to build PDF book 
+          tinytex: true 
+          # uncomment below and fill to pin a version
+          # version: SPECIFIC-QUARTO-VERSION-HERE
+      
+      # add software dependencies here and any libraries
+      
+      # 安裝中文字體（避免 PDF 缺字）
       - name: Install CJK fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk
+          sudo apt-get install -y fonts-noto-cjk      
 
-      # 5. 渲染 Quarto 書籍 (HTML + PDF)
-      - name: Render book
-        run: quarto render
+      # From https://github.com/actions/setup-python
+      # - name: Setup Python
+      #   uses: actions/setup-python@v3
 
-      # 6. 上傳 PDF 作為 artifact（方便下載檢查）
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4
+      # From https://github.com/r-lib/actions/tree/v2-branch/setup-r
+      # - name: Setup R
+      #   uses: r-lib/actions/setup-r@v2
+
+      # From https://github.com/julia-actions/setup-julia
+      # - name: Setup Julia
+      #   uses: julia-actions/setup-julia@v1
+
+      # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
+
+      # To publish to Netlify, RStudio Connect, or GitHub Pages, uncomment
+      # the appropriate block below
+      
+      # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
+      - name: Publish to GitHub Pages (and render) 
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          name: quarto-book-pdf
-          path: _output/*.pdf
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: "latest"
-
-      - name: Render book (HTML only)
-        run: quarto render --to html
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _output
