@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "我的 Quarto 書籍測試",
+    "section": "",
+    "text": "前言\n這是一本使用 Quarto 撰寫的最小示範書籍。\n要展示的東西是：\n\n基本章節結構\nHTML/PDF 輸出\n與 GitHub Actions 整合",
+    "crumbs": [
+      "前言"
+    ]
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "1  簡介",
+    "section": "",
+    "text": "Quarto 是一個文件與出版系統，可以輸出：\n\nHTML 網頁\nPDF 文件\nWord 文件\n甚至是幻燈片",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>簡介</span>"
+    ]
+  },
+  {
+    "objectID": "02-workflow.html",
+    "href": "02-workflow.html",
+    "title": "2  工作流程",
+    "section": "",
+    "text": "在實務中，你可以將 Quarto 搭配 GitHub Actions，自動生成：\n\n靜態網站\nPDF 書籍\n技術文件\n\n例如：\nquarto render",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>工作流程</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "參考文獻",
+    "section": "",
+    "text": "書籍\n這裡用來放參考文獻或附錄。",
+    "crumbs": [
+      "參考文獻"
+    ]
+  },
+  {
+    "objectID": "references.html#書籍",
+    "href": "references.html#書籍",
+    "title": "參考文獻",
+    "section": "",
+    "text": "Hadley Wickham, R for Data Science, O’Reilly Media, 2017.\nNorman Matloff, The Art of R Programming, No Starch Press, 2011.",
+    "crumbs": [
+      "參考文獻"
+    ]
+  },
+  {
+    "objectID": "references.html#網站",
+    "href": "references.html#網站",
+    "title": "參考文獻",
+    "section": "網站",
+    "text": "網站\n\nQuarto 官方文件\nPandoc User’s Guide",
+    "crumbs": [
+      "參考文獻"
+    ]
+  }
+]
