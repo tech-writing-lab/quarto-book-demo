@@ -12,7 +12,7 @@ book:
     - 02-workflow.qmd
     - references.qmd
 
-lang: zh-tw
+lang: zh-TW
 toc: true
 number-sections: true
 
@@ -29,5 +29,5 @@ format:
     number-sections: true
     fontsize: 11pt
     # 指定中文字體 (需安裝 Noto Serif 繁體中文字型)
-    mainfont: "Noto Serif TC"
+    mainfont: "Noto Serif CJK TC"
 
