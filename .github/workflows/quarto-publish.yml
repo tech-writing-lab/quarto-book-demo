@@ -30,12 +30,13 @@ jobs:
           # version: SPECIFIC-QUARTO-VERSION-HERE
       
       # add software dependencies here and any libraries
-      
+
       # 安裝中文字體（避免 PDF 缺字）
       - name: Install CJK fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk      
+          sudo apt-get install -y fonts-noto-cjk
+          fc-list :lang=zh-TW
 
       # From https://github.com/actions/setup-python
       # - name: Setup Python
