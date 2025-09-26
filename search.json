@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "我的 Quarto 書籍測試",
     "section": "",
-    "text": "前言\n這是一本使用 Quarto 撰寫的最小示範書籍。\n要展示的東西是：\n\n基本章節結構\nHTML/PDF 輸出\n與 GitHub Actions 整合",
+    "text": "前言\n這是一本使用 Quarto 撰寫的最小示範書籍。\n要展示的東西是：\n\n基本章節結構\nHTML/PDF 輸出\n與 GitHub Actions 整合\n\n與 GitHub Actions 整合，看這份文件並按其指示進行即可： Quarto Actions: Basics",
     "crumbs": [
       "前言"
     ]
