@@ -21,13 +21,12 @@ format:
     theme: cosmo
   epub:
     toc: true
-  #pdf:
-  #  documentclass: book
-  #  papersize: a4
-  #  toc: true
-  #  toc-depth: 3
-  #  number-sections: true
-  #  fontsize: 11pt
-  #  # 指定中文字體 (需安裝 Noto Serif 繁體中文字型)
-  #  mainfont: "Noto Serif CJK TC"
-
+  pdf:
+    documentclass: book
+    papersize: a4
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fontsize: 11pt
+    # 指定Noto Serif CJK TC)
+    mainfont: "Noto Serif CJK TC"
