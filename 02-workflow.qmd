@@ -8,8 +8,19 @@
 
 例如：
 
+
 ```bash
 quarto render
 ```
 
+
+測試程式碼區塊：C#。
+
+
+```csharp
+string name = "mike";
+int age = 20;
+var tuple = (name, age); // 自動推導元素名稱
+Console.WriteLine($"{tuple.name} {tuple.age}");
+```
 

@@ -5,7 +5,8 @@ project:
 book:
   title: "我的 Quarto 書籍測試"
   author: "IT 老菜鳥"
-  date: "2025-09-22"
+  date: last-modified
+  date-format: "yyyy-MM-dd"
   chapters:
     - index.qmd
     - 01-intro.qmd
@@ -19,14 +20,23 @@ number-sections: true
 format:
   html:
     theme: cosmo
+    code-line-numbers: true
   epub:
     toc: true
-  pdf:
-    documentclass: book
+    code-line-numbers: true
+  pdf:    
+    documentclass: book    
     papersize: a4
     toc: true
     toc-depth: 3
     number-sections: true
-    fontsize: 11pt
+    #linestretch: 1.25
     # 指定Noto Serif CJK TC)
-    mainfont: "Noto Serif CJK TC"
+    mainfont: "Noto Serif CJK TC"    
+    CJKmainfont: "Microsoft JhengHei"
+    monofont: "Fira Code"
+    fontsize: 11pt
+    monofontoptions: "Scale=0.8"
+    code-line-numbers: true
+    includes:
+      in-header: custom.tex
