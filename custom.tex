@@ -1,12 +1,19 @@
 \usepackage{lipsum}
 \usepackage{setspace}
 \onehalfspacing
-\linespread{2}
-\renewenvironment{Shaded}
-    {\begin{snugshade}
-    \begin{singlespace}
-    \linespread{2}
-    }
-    {\end{singlespace}
-    \end{snugshade}
-}
+\setlength{\parskip}{1.5em}   % 段落之間距離
+\setlength{\intextsep}{1.5em}   % 圖片與文字間距
+\setlength{\textfloatsep}{1.5em} % 浮動圖與上下文字間距
+\setlength{\abovecaptionskip}{0.5em} % caption 與表格/圖片間距
+\setlength{\belowcaptionskip}{0.8em}
+
+\fvset{baselinestretch=1, xleftmargin=2em, framesep=8mm, vspace=2em}
+
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{Verbatim}{\vspace{30pt}}
+\AfterEndEnvironment{Verbatim}{\vspace{30pt}}
+\BeforeBeginEnvironment{lstlisting}{\vspace{6pt}}
+\AfterEndEnvironment{lstlisting}{\vspace{1pt}}
+
+\usepackage{enumitem}
+\setlist{itemsep=1pt, topsep=0.6em}  % 每個項目與清單上下間距

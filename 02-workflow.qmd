@@ -1,6 +1,6 @@
 # 工作流程
 
-在實務中，你可以將 Quarto 搭配 **GitHub Actions**，自動生成：
+實務上，你可以將 Quarto 搭配 **GitHub Actions**，自動生成：
 
 - 靜態網站
 - PDF 書籍
@@ -13,8 +13,18 @@
 quarto render
 ```
 
+Quarto 本身就是為了「一稿多用」而設計的：用 Markdown 或 MyST 撰寫日常筆記，隨時能輸出成網站（HTML）、PDF、ePub，甚至 Word。這樣的數位寫作一條龍流程，完全可以用 Quarto 建立。
 
-測試程式碼區塊：C#。
+Quarto 在此流程的角色：
+
+- 日常筆記：用 Markdown (.qmd) 撰寫，直接放在資料夾中。
+- 網站發布：透過 `quarto render` 輸出 HTML，搭配 GitHub Pages 或 Netlify 部署。
+- 電子書：在需要時，切換輸出為 pdf 或 epub。（Quarto 內建支援，底層用 Pandoc；PDF 依賴 LaTeX。）
+
+
+## 測試程式碼區塊
+
+測試 C#：
 
 
 ```csharp
@@ -24,3 +34,25 @@ var tuple = (name, age); // 自動推導元素名稱
 Console.WriteLine($"{tuple.name} {tuple.age}");
 ```
 
+觀察重點：
+
+- 有沒有行號？
+- 程式碼區塊的中文字能否正確顯示？
+- 程式碼區塊的字體大小是否比正文的字體稍微小一點？
+- 有沒有語法高量？
+
+程式碼區塊如果要使用美觀的英文字體，中文字很可能就無法正常顯示。建議的做法是在程式碼區塊中使用 [Code Annotation](https://quarto.org/docs/authoring/code-annotation.html#annotation-syntax) 的標註語法。例如：
+
+```csharp
+string name = "mike";
+int age = 20;
+var tuple = (name, age);                        // <1> 
+Console.WriteLine($"{tuple.name} {tuple.age}"); // <2>
+```
+
+1. 自動推導元素名稱。
+2. 輸出結果。
+
+生成的 PDF 會接近以下截圖：
+
+![](images/code-annotation-pdf.png)

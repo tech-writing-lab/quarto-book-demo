@@ -25,18 +25,17 @@ format:
     toc: true
     code-line-numbers: true
   pdf:    
+    include-in-header: custom.tex
     documentclass: book    
     papersize: a4
     toc: true
     toc-depth: 3
     number-sections: true
-    #linestretch: 1.25
+    linestretch: 1.3 # 列高
     # 指定Noto Serif CJK TC)
     mainfont: "Noto Serif CJK TC"    
-    CJKmainfont: "Microsoft JhengHei"
-    monofont: "Fira Code"
+    #CJKmainfont: "Microsoft JhengHei"
+    monofont: "Fira Code" # 注意：程式碼區塊中的中文會顯示成豆腐!
     fontsize: 11pt
     monofontoptions: "Scale=0.8"
-    code-line-numbers: true
-    includes:
-      in-header: custom.tex
+    code-line-numbers: true    
