@@ -26,7 +26,6 @@ Quarto 在此流程的角色：
 
 測試 C#：
 
-
 ```csharp
 string name = "mike";
 int age = 20;
@@ -46,7 +45,7 @@ Console.WriteLine($"{tuple.name} {tuple.age}");
 ```csharp
 string name = "mike";
 int age = 20;
-var tuple = (name, age);                        // <1> 
+var tuple = (name, age);                        // <1>
 Console.WriteLine($"{tuple.name} {tuple.age}"); // <2>
 ```
 
