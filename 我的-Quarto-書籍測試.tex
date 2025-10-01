@@ -163,7 +163,7 @@
 
 \usepackage{lipsum}
 \usepackage{setspace}
-%\onehalfspacing
+\onehalfspacing
 %\setlength{\parskip}{1.5em}   % 段落之間距離
 %\setlength{\intextsep}{1.5em}   % 圖片與文字間距
 %\setlength{\textfloatsep}{1.5em} % 浮動圖與上下文字間距
@@ -174,10 +174,11 @@
 
 \usepackage{etoolbox}
 \BeforeBeginEnvironment{Shaded}{\vspace{1em}}
-\AfterEndEnvironment{Shaded}{\vspace{0.25em}}
+\AfterEndEnvironment{Shaded}{\vspace{0.4em}}
+\AfterEndEnvironment{description}{\vspace{1em}}
 
 \usepackage{enumitem}
-\setlist{itemsep=1pt, topsep=0.6em}  % 每個項目與清單上下間距
+%\setlist{itemsep=1pt, topsep=0.6em}  % 每個項目與清單上下間距
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother

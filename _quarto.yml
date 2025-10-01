@@ -40,3 +40,4 @@ format:
     fontsize: 11pt
     monofontoptions: "Scale=0.8"
     code-line-numbers: true
+    highlight-style: arrow
